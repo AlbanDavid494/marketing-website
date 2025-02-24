@@ -1,6 +1,7 @@
 import { Form } from "react-router"
 import Footer from "~/Components/Footer"
 import Header from "~/Components/Header"
+import { motion } from 'framer-motion'
 
 const contact = () => {
   return (
@@ -9,9 +10,12 @@ const contact = () => {
     <div className="py-20">
 
       <div className="container mx-auto px-4 max-w-3xl">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Contact us</h1>
+        <motion.h1 initial={{opacity:0, y:-50}} animate={{opacity:1,y:0}} className="text-4xl font-bold text-center text-gray-800 mb-8">Contact us</motion.h1>
 
-        <Form className="space-y-4">
+        <motion.form initial={{opacity:0}}
+        animate={{opacity:1}} 
+        transition={{delay:0.2}}
+        className="space-y-4">
 <div>
   <label htmlFor="name" className="block text-sm font-medium text-gray-700 pl-1">Name</label>
   <input type="text" placeholder="David "
@@ -31,7 +35,7 @@ const contact = () => {
 </div>
 
 <button className="w-full bg-blue-500 text-wite px-4 py-2 rounded-md hover-bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus';ring-opacity-50 text-white font-semibold cursor-pointer hover:text-gray-200">Send Message</button>
-        </Form>
+        </motion.form>
       </div>
 
     </div>

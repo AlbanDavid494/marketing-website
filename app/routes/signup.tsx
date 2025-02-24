@@ -10,8 +10,8 @@ const signup = () => {
       <div className="py-20">
       
 <div className="container mx-auto px4 max-w-md">
-<h1 className="text-4xl font-bold text-center text-gay-800 mb-8">Sign Up</h1>
-<Form className="space-y-4">
+<h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Sign Up</h1>
+<Form className="space-y-4 px-6">
 <div>
   <label className='block text-sm font-medium text-gray-700' htmlFor="email">Email</label>
   <input type="text" required className="mt-1 block w-full rounded-sm border-gray-300 shadow-sm focus:border-blue-300 focus:ring p-3 

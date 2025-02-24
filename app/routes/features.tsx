@@ -1,8 +1,9 @@
 import Footer from "~/Components/Footer"
 import Header from "~/Components/Header"
-import cpu from '../../public/cpu.jpg'
-import battery from '../../public/battery.jpg'
-import camera from '../../public/camera.jpg'
+import cpu from '/cpu.jpg'
+import battery from '/battery.jpg'
+import camera from '/camera.jpg'
+import { motion } from 'framer-motion'
 
 const features = () => {
 const featureDetails = [
@@ -32,9 +33,15 @@ const featureDetails = [
       <section className="flex flex-col min-h-screen">
 <div className="flex-grow bg-gray-100">
   <div className="container mx-auto px-4 py-20">
-    <h1 className="text-4xl font-bold text-gray-800 mb-12">iphone 15 Pro Max Features</h1>
+    <motion.h1 initial={{opacity:0}}
+    animate={{opacity:1, y:0}}
+    className="text-4xl font-bold text-gray-800 mb-12">iphone 15 Pro Max Features</motion.h1>
     {featureDetails?.map((feature,index) => (
-      <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+      <motion.div
+        initial={{opacity:0, y:50}}
+        animate={{opacity:1, y:0}}
+        transition={{delay: index * 0.8}}
+        key={index} className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
         <div className="md:flex">
           <div className="md:flex-shrink-0">
             <img src={feature.image}
@@ -48,7 +55,7 @@ const featureDetails = [
           
           
         </div>
-      </div>
+      </motion.div>
     ))}
   </div>
 </div>
